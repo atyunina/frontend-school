@@ -390,50 +390,50 @@
                     case 2:
                     case 4:
                         while (direction != 1)  {
-                            this.turnRight()
+                            this.turnRight();
                         }
-                        this.goLongForward()
-                        this.turnRight()
-                        this.goLongForward()
+                        this.goLongForward();
+                        this.turnRight();
+                        this.goLongForward();
                         break;
                     
                     case 6:
                     case 8:
                         while (direction != 1)  {
-                            this.turnRight()
+                            this.turnRight();
                         }
-                        this.goLongForward()
-                        this.turnLeft()
-                        this.goLongForward()
+                        this.goLongForward();
+                        this.turnLeft();
+                        this.goLongForward();
                         break;
 
                     case 1:
                     case 3:
                     case 5:
                         while (direction != 3)  {
-                            this.turnLeft()
+                            this.turnLeft();
                         }
-                        this.goLongForward()
-                        this.turnLeft()
-                        this.goLongForward()
+                        this.goLongForward();
+                        this.turnLeft();
+                        this.goLongForward();
                         break;
 
                     case 7:
                     case 9:
                         if (position.left == 0) break;
                         while (direction != 3)  {
-                            this.turnLeft()
+                            this.turnLeft();
                         }
-                        this.goLongForward()
-                        this.turnRight()
-                        this.goLongForward()
+                        this.goLongForward();
+                        this.turnRight();
+                        this.goLongForward();
                         break;
                 }
             },
 
             goLongForward() {
                 while (this.isThereWay()) {
-                    this.goForward()
+                    this.goForward();
                 }
             },
 
@@ -506,7 +506,7 @@
     function escapePlan() {
         const piece = createPiece();
         for (let i=0; i<15; i++) {
-            piece.findWay()
+            piece.findWay();
         }
     }
 
