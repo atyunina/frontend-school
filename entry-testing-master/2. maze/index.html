@@ -384,6 +384,59 @@
                 rotatePiece(direction);
             },
 
+            findWay() {
+                switch (position.top) {
+                    case 0:
+                    case 2:
+                    case 4:
+                        while (direction != 1)  {
+                            this.turnRight()
+                        }
+                        this.goLongForward()
+                        this.turnRight()
+                        this.goLongForward()
+                        break;
+                    
+                    case 6:
+                    case 8:
+                        while (direction != 1)  {
+                            this.turnRight()
+                        }
+                        this.goLongForward()
+                        this.turnLeft()
+                        this.goLongForward()
+                        break;
+
+                    case 1:
+                    case 3:
+                    case 5:
+                        while (direction != 3)  {
+                            this.turnLeft()
+                        }
+                        this.goLongForward()
+                        this.turnLeft()
+                        this.goLongForward()
+                        break;
+
+                    case 7:
+                    case 9:
+                        if (position.left == 0) break;
+                        while (direction != 3)  {
+                            this.turnLeft()
+                        }
+                        this.goLongForward()
+                        this.turnRight()
+                        this.goLongForward()
+                        break;
+                }
+            },
+
+            goLongForward() {
+                while (this.isThereWay()) {
+                    this.goForward()
+                }
+            },
+
             goForward() {
                 stepsCount += 1;
                 if (!this.isThereWay()) {
@@ -452,11 +505,9 @@
 
     function escapePlan() {
         const piece = createPiece();
-        // piece.isThereWay();
-        // piece.goForward();
-        // piece.turnRight();
-        // piece.turnLeft();
-        // piece.amIFree();
+        for (let i=0; i<15; i++) {
+            piece.findWay()
+        }
     }
 
     function main() {
