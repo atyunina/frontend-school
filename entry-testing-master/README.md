@@ -29,3 +29,7 @@ Don't fork from this repository!
 
 One more thing: be brave and creative :)
 We are waiting for you to join our team!
+
+## Contacts
+E-mail: anastasiya.tyunina@t-systems.com
+        tyunina.ai@gmail.com
