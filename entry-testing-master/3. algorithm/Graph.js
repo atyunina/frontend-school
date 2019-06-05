@@ -26,6 +26,14 @@ class Graph {
         }
     }
 
+    getEdge(src, dest) {
+        let values = this.AdjacencyList.get(src);
+        for (let i of values) {
+            if (i.dest === dest)
+                return i;
+        }
+    }
+
     printGraph() 
     { 
         let keys = this.AdjacencyList.keys(); 
@@ -35,7 +43,7 @@ class Graph {
             let values = this.AdjacencyList.get(i); 
             let conc = ""; 
   
-            for (var j of values) 
+            for (let j of values) 
                 conc += j.dest + " "; 
   
             console.log(i + " -> " + conc); 
@@ -60,5 +68,3 @@ function main() {
 
     g.printGraph();
 }
-
-alert(main());
